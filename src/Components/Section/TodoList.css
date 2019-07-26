@@ -1,0 +1,57 @@
+.todoList {
+  width: 100%;
+}
+
+.todoList .todos {
+  width: 100%;
+}
+
+.todoList .todos .item {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #D1D5DA;
+  border-radius: 5px;
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+}
+
+.todoList .todos .item.done {
+  background: #0097e6;
+  border-color: #0097e6;
+}
+.todoList .todos .item.done .task {
+  color: white;
+}
+
+.todoList .todos .item .task {
+  width: calc(100% - 66px);
+  display: flex;
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+.todoList .todos .item .btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  margin: 0 2.5px;
+  display: flex;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todoList .todos .item .btn.done {
+  background: #0097e6;
+}
+
+.todoList .todos .item .btn.delete {
+  background: #d63031;
+}
+
+.todoList .todos .item .btn i{
+  font-size: 14px;
+  color: white;
+}

@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "index": 1,
+      "task": "task",
+      "done": false
+    },
+    {
+      "index": 2,
+      "task": "task",
+      "done": false
+    },
+    {
+      "index": 3,
+      "task": "task",
+      "done": false
+    },
+    {
+      "index": 4,
+      "task": "task",
+      "done": true
+    }
+  ]
+}
