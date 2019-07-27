@@ -3,13 +3,11 @@ import './AddCtrl.css';
 
 class AddCtrl extends React.Component {
   constructor(props) {
-    console.log('AddCtrl constructor');
     super(props);
     this.state = {};
   }
 
   shouldComponentUpdate(props, state) {
-    console.log('AddCtrl shouldComponentUpdate');
     if(this.state === state){
       return false;
     }
@@ -17,7 +15,6 @@ class AddCtrl extends React.Component {
   }
 
   render() {
-    console.log('AddCtrl render');
     return (
       <form
         onSubmit={

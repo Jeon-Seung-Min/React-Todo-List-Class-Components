@@ -1,3 +1,3 @@
-# Javascript Study Footprinting
+# React TodoList
 
 React TodoList using class.

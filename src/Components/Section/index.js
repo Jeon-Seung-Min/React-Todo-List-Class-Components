@@ -7,7 +7,6 @@ import './index.css';
 
 class Section extends React.Component {
   constructor(props) {
-    console.log('index constructor');
     super(props);
     this.state = {
       todos: todos,
@@ -40,7 +39,7 @@ class Section extends React.Component {
         return true;
       }
     });
-    
+
     this.setState({
       todos: newTodos
     });
@@ -62,7 +61,6 @@ class Section extends React.Component {
   };
 
   render() {
-    console.log('index render');
     return (
       <section>
         <AddCtrl

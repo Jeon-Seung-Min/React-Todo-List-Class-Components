@@ -3,13 +3,11 @@ import './TodoList.css';
 
 class TodoList extends React.Component {
   constructor(props) {
-    console.log('TodoList constructor');
     super(props);
     this.state = {};
   }
 
   static getDerivedStateFromProps(props, state) {
-    console.log('TodoList getDerivedStateFromProps');
     return {
       todos: props.todos
     };
@@ -26,7 +24,6 @@ class TodoList extends React.Component {
   }
 
   render() {
-    console.log('TodoList render');
     let items = this.state.todos.map((todo) => {
       if(todo.done) {
         return (
