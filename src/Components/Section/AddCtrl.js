@@ -5,7 +5,7 @@ class AddCtrl extends React.Component {
   constructor(props) {
     console.log('AddCtrl constructor');
     super(props);
-    this.state = {a:10};
+    this.state = {};
   }
 
   shouldComponentUpdate(props, state) {

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './TodoList.css';
 
 class TodoList extends React.Component {
@@ -22,14 +21,14 @@ class TodoList extends React.Component {
       if(todo.done) {
         return (
           <li key={todo.index} className="item done">
-            <span className="task">{todo.task+todo.index}</span>
+            <span className="task">{todo.task}</span>
             <span className="btn delete"><i className="far fa-trash-alt" /></span>
           </li>
         );
       } else {
         return (
           <li key={todo.index} className="item">
-            <span className="task">{todo.task+todo.index}</span>
+            <span className="task">{todo.task}</span>
             <span
               className="btn done"
               onClick={

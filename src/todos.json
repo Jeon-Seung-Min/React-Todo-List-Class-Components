@@ -2,23 +2,38 @@
   "todos": [
     {
       "index": 1,
-      "task": "task",
+      "task": "React",
       "done": false
     },
     {
       "index": 2,
-      "task": "task",
+      "task": "Redux",
       "done": false
     },
     {
       "index": 3,
-      "task": "task",
+      "task": "Functional Component ( React Hooks )",
       "done": false
     },
     {
       "index": 4,
-      "task": "task",
-      "done": true
+      "task": "TypeScript",
+      "done": false
+    },
+    {
+      "index": 5,
+      "task": "Storybook",
+      "done": false
+    },
+    {
+      "index": 6,
+      "task": "Jest",
+      "done": false
+    },
+    {
+      "index": 7,
+      "task": "GitLab",
+      "done": false
     }
   ]
 }

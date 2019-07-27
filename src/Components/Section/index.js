@@ -2,6 +2,7 @@ import React from 'react';
 import AddCtrl from './AddCtrl';
 import TodoList from './TodoList';
 import {todos} from '../../todos.json';
+import deepCopy from '../../deepCopy';
 import './index.css';
 
 class Section extends React.Component {
@@ -20,7 +21,7 @@ class Section extends React.Component {
       <section>
         <AddCtrl
           addTask={(task)=>{
-            let newTodos = Array.from(this.state.todos);
+            let newTodos = deepCopy(this.state.todos);
             let newTask = {
               index: Number(this.state.lastIndex)+1,
               task: task,
@@ -37,10 +38,11 @@ class Section extends React.Component {
         <TodoList
           todos={this.state.todos}
           doneTask={(index)=>{
-            // this.setStat
-            // this.setState({
-            //
-            // });
+            let newTodos = deepCopy(this.state.todos);
+            newTodos[index-1].done = true;
+            this.setState({
+              todos: newTodos
+            });
           }} />
       </section>
     );
