@@ -15,6 +15,16 @@ class TodoList extends React.Component {
     };
   }
 
+  doneOnClick = (event)=>{
+    this.props.doneTask(event.currentTarget.parentNode.lastChild.value);
+    event.preventDefault();
+  }
+
+  deleteOnClick = (event)=>{
+    this.props.deleteTask(event.currentTarget.parentNode.lastChild.value);
+    event.preventDefault();
+  }
+
   render() {
     console.log('TodoList render');
     let items = this.state.todos.map((todo) => {
@@ -22,27 +32,21 @@ class TodoList extends React.Component {
         return (
           <li key={todo.index} className="item done">
             <span className="task">{todo.task}</span>
-            <span className="btn delete"><i className="far fa-trash-alt" /></span>
+            <span className="btn delete" onClick={this.deleteOnClick}><i className="far fa-trash-alt" /></span>
+            <input type="hidden" name="index" value={todo.index} />
           </li>
         );
       } else {
         return (
           <li key={todo.index} className="item">
             <span className="task">{todo.task}</span>
-            <span
-              className="btn done"
-              onClick={
-                (event)=>{
-                  this.props.doneTask(event.currentTarget.parentNode.lastChild.value);
-                  event.preventDefault();
-                }}><i className="fas fa-check" /></span>
-            <span className="btn delete"><i className="far fa-trash-alt" /></span>
+            <span className="btn done" onClick={this.doneOnClick}><i className="fas fa-check" /></span>
+            <span className="btn delete" onClick={this.deleteOnClick}><i className="far fa-trash-alt" /></span>
             <input type="hidden" name="index" value={todo.index} />
           </li>
         );
       }
     });
-
 
     return (
       <div className="todoList">
