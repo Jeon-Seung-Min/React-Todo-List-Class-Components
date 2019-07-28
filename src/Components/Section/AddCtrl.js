@@ -18,7 +18,7 @@ class AddCtrl extends React.Component {
     return (
       <form
         onSubmit={
-          (event)=>{
+          (event) => {
             this.props.addTask(event.target.task.value);
             event.target.task.value = '';
             event.preventDefault();

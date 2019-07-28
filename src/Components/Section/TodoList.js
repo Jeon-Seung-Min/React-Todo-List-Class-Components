@@ -13,12 +13,12 @@ class TodoList extends React.Component {
     };
   }
 
-  doneOnClick = (event)=>{
+  doneOnClick = (event) => {
     this.props.doneTask(event.currentTarget.parentNode.lastChild.value);
     event.preventDefault();
   }
 
-  deleteOnClick = (event)=>{
+  deleteOnClick = (event) => {
     this.props.deleteTask(event.currentTarget.parentNode.lastChild.value);
     event.preventDefault();
   }

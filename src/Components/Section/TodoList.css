@@ -12,6 +12,7 @@
   border: 1px solid #D1D5DA;
   border-radius: 5px;
   margin: 3px 0;
+  background-color: white;
   display: flex;
   align-items: center;
 }

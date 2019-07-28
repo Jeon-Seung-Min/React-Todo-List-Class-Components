@@ -12,23 +12,29 @@ class App extends React.Component {
     this.state = {
       db: null
     };
-    indexedDB.connect.call(this);
+    indexedDB.connect()
+      .then((db) => {
+        this.setState({
+          db: db
+        });
+      })
+      .catch(console.error);
   }
-
 
   render() {
     if(this.state.db === null) {
       return (
-        <Loader />
-      );
-    } else {
-      return (
         <div className="App">
-        <Header />
-        <Section db={this.state.db} />
+          <Loader />
         </div>
       );
     }
+    return (
+      <div className="App">
+        <Header />
+        <Section db={this.state.db} />
+      </div>
+    );
   }
 }
 

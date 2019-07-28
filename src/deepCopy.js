@@ -11,7 +11,7 @@ const deepCopy = (obj) => {
     newState = {};
   }
 
-  Object.keys(obj).forEach((key, index, allKey)=>{
+  Object.keys(obj).forEach((key, index, allKey) => {
     if(isArray) {
       newState.push(deepCopy(obj[key]));
     } else {
