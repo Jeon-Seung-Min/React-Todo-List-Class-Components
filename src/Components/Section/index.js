@@ -10,7 +10,6 @@ class Section extends React.Component {
     super(props);
     this.state = {
       todos: [],
-      lastIndex: 0,
       db: this.props.db
     };
     indexedDB.getTodos(this.state.db)
@@ -39,7 +38,6 @@ class Section extends React.Component {
         newTodos.push(newTask);
 
         this.setState({
-          lastIndex: newTask.index,
           todos: newTodos
         });
       })
