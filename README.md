@@ -1,3 +1,3 @@
 # React Todo List
 
-React TodoList using Class-Components and IndexedDB.
+React TodoList using Class Components and IndexedDB.
