@@ -1,22 +1,18 @@
-import React from 'react';
-import Header from './Components/Header';
-import Section from './Components/Section';
-import Loader from './Components/Loader';
-import indexedDB from './indexedDB';
+import React, { Component } from 'react';
+import Header from './Components/Header/index.jsx';
+import Section from './Components/Section/index.jsx';
+import Loader from './Components/Loader/index.jsx';
+import IndexedDB from './IndexedDB.js';
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {db: null};
 
-    this.state = {
-      db: null
-    };
-    indexedDB.connect()
+    IndexedDB.connect()
       .then((db) => {
-        this.setState({
-          db: db
-        });
+        this.setState({db});
       })
       .catch(console.error);
   }

@@ -1,4 +1,4 @@
-const indexedDB = {
+const IndexedDB = {
   connect: () => {
     return new Promise((resolve, reject) => {
       if(!window.indexedDB) {
@@ -40,7 +40,7 @@ const indexedDB = {
       };
     });
   },
-  addTask: (db, task) => {
+  addTodo: (db, task) => {
     return new Promise((resolve, reject) => {
       let request = db
         .transaction(["todos"], "readwrite")
@@ -60,7 +60,7 @@ const indexedDB = {
       };
     });
   },
-  doneTask: (db, index) => {
+  doneTodo: (db, index) => {
     return new Promise((resolve, reject) => {
       let store = db
         .transaction(["todos"], "readwrite")
@@ -90,7 +90,7 @@ const indexedDB = {
       };
     });
   },
-  deleteTask: (db, index) => {
+  deleteTodo: (db, index) => {
     return new Promise((resolve, reject) => {
       let request = db
         .transaction(["todos"], "readwrite")
@@ -108,4 +108,4 @@ const indexedDB = {
   }
 };
 
-export default indexedDB;
+export default IndexedDB;

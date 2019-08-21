@@ -5,6 +5,17 @@
   font-family: 'Noto Sans', sans-serif;
   box-sizing: border-box;
 }
+
 ul, li {
   list-style: none;
 }
+
+::selection {background: rgba(251, 197, 49, 0.75);}
+::-webkit-scrollbar {width: 0px; height: 0px;}
+::-webkit-scrollbar-track {}
+
+::-webkit-scrollbar-thumb {}
+
+::-webkit-scrollbar-button {}
+
+::-webkit-scrollbar-corner {}

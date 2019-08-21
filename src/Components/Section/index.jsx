@@ -1,18 +1,17 @@
-import React from 'react';
-import AddCtrl from './AddCtrl';
-import TodoList from './TodoList';
+import React, { Component } from 'react';
+import AddCtrl from './AddCtrl/index.jsx';
+import TodoList from './TodoList/index.jsx';
 import deepCopy from '../../deepCopy';
-import indexedDB from '../../indexedDB';
-import './index.css';
+import IndexedDB from '../../IndexedDB.js';
 
-class Section extends React.Component {
+class Section extends Component {
   constructor(props) {
     super(props);
     this.state = {
       todos: [],
       db: this.props.db
     };
-    indexedDB.getTodos(this.state.db)
+    IndexedDB.getTodos(this.state.db)
       .then((todos) => {
         this.setState({
           todos: todos
@@ -25,8 +24,8 @@ class Section extends React.Component {
     return {db: props.db}
   }
 
-  addTask = (task) => {
-    indexedDB.addTask(this.state.db, task)
+  addTodo = (task) => {
+    IndexedDB.addTodo(this.state.db, task)
       .then((index) => {
         let newTodos = deepCopy(this.state.todos);
         let newTask = {
@@ -44,8 +43,8 @@ class Section extends React.Component {
       .catch(console.error);
   };
 
-  doneTask = (index) => {
-    indexedDB.doneTask(this.state.db, index)
+  doneTodo = (index) => {
+    IndexedDB.doneTodo(this.state.db, index)
       .then((index) => {
         let newTodos = deepCopy(this.state.todos);
 
@@ -64,8 +63,8 @@ class Section extends React.Component {
       .catch(console.error);
   };
 
-  deleteTask = (index) => {
-    indexedDB.deleteTask(this.state.db, index)
+  deleteTodo = (index) => {
+    IndexedDB.deleteTodo(this.state.db, index)
       .then(() => {
         let newTodos = deepCopy(this.state.todos);
 
@@ -88,11 +87,11 @@ class Section extends React.Component {
     return (
       <section>
         <AddCtrl
-          addTask={this.addTask} />
+          addTodo={this.addTodo} />
         <TodoList
           todos={this.state.todos}
-          doneTask={this.doneTask}
-          deleteTask={this.deleteTask} />
+          doneTodo={this.doneTodo}
+          deleteTodo={this.deleteTodo} />
       </section>
     );
   }

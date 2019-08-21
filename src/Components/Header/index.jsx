@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 
-class Header extends React.Component {
+class Header extends PureComponent {
   render() {
     return (
       <header>
